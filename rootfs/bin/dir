@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$1" = "-a" ]; then
+    shift
+    ls -la "$@"
+else
+    ls -l "$@"
+fi

@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    echo "Usage: edit <filename>"
+    exit 1
+fi
+echo "Editing: $1  (type :q to save and exit, :q! to exit without saving)"
+> "$1"
+while true; do
+    printf "> "
+    read line
+    if [ "$line" = ":q" ]; then
+        echo "Saved: $1"
+        break
+    elif [ "$line" = ":q!" ]; then
+        echo "Discarded."
+        break
+    else
+        echo "$line" >> "$1"
+    fi
+done

@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    echo "Usage: delete <file or directory>"
+    exit 1
+fi
+if [ ! -e "$1" ]; then
+    echo "Error: '$1' not found"
+    exit 1
+fi
+rm -rf "$1" && echo "Deleted: $1"

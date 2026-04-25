@@ -1,0 +1,7 @@
+#!/bin/sh
+# Auto-login as root and source profile
+export HOME=/root
+export USER=root
+export LOGNAME=root
+source /etc/profile
+exec /bin/sh

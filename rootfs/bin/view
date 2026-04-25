@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+    echo "Usage: view <filename>"
+    exit 1
+fi
+if [ ! -f "$1" ]; then
+    echo "Error: '$1' not found"
+    exit 1
+fi
+echo "--- $1 ---"
+cat "$1"
+echo "---"
