@@ -1,0 +1,7 @@
+# SDUL inittab - busybox init
+::sysinit:/etc/init.d/rcS
+::respawn:/sbin/getty -n -l /bin/login 115200 tty1
+::respawn:/sbin/getty -n -l /bin/login 115200 ttyS0
+::ctrlaltdel:/sbin/reboot
+::shutdown:/sbin/swapoff -a
+::shutdown:/bin/umount -a -r
